@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {ScreenContainer} from '../Components';
-import {Text} from 'react-native';
+import {TravelImage} from '../Assets/Images';
 
 export const TravelScreen = () => {
   return (
     <ScreenContainer>
-      <Text>Travel Screen</Text>
+      <TravelImage />
     </ScreenContainer>
   );
 };

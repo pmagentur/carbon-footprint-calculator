@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {ScreenContainer} from '../Components';
-import {Text} from 'react-native';
+import {ElectricityImage} from '../Assets/Images';
 
 export const ElectricityScreen = () => {
   return (
     <ScreenContainer>
-      <Text>Electricity Screen</Text>
+      <ElectricityImage />
     </ScreenContainer>
   );
 };

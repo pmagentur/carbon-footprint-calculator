@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {ScreenContainer} from '../Components';
-import {Text} from 'react-native';
+import {LivingImage} from '../Assets/Images';
 
 export const LivingScreen = () => {
   return (
     <ScreenContainer>
-      <Text>Living Screen</Text>
+      <LivingImage />
     </ScreenContainer>
   );
 };
