@@ -2,4 +2,7 @@ export const COLORS = {
   WHITE: '#FFFFFF',
   LIGHT: '#EEEEEE',
   DARK: '#212121',
+  CFP_BLACK: '#191D21',
+  CFP_GREEN1: '#BBFA9E',
+  CFP_GREEN2: '#93ED8C',
 };

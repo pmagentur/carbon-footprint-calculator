@@ -18,7 +18,7 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name={SCREENS.START_SCREEN} component={StartScreen} />
         <Stack.Screen name={SCREENS.MOBILITY_SCREEN} component={MobilityScreen} />
         <Stack.Screen name={SCREENS.TRAVEL_SCREEN} component={TravelScreen} />
