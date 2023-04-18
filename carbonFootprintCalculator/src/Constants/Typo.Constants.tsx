@@ -7,8 +7,8 @@ export const FONTS = {
 export const FONT_SIZES = {
   XS: 12,
   S: 14,
-  M: 16,
-  ML: 18,
+  M: 15,
+  ML: 16,
   L: 24,
   XL: 28,
 };
