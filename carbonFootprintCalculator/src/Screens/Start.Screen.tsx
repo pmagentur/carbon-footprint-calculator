@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ScreenContainer} from '../Components';
+import {ScreenContainerComponent} from '../Components';
 import {SCREENS} from '../Constants';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -18,7 +18,7 @@ export const StartScreen = () => {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <ScreenContainer>
+    <ScreenContainerComponent>
       <StartButtonContainer>
         <StartButton
           diameter={START_BUTTON_DIAMETER}
@@ -27,6 +27,6 @@ export const StartScreen = () => {
         </StartButton>
       </StartButtonContainer>
       <StartHeader>Berechne jetzt deinen CO2 Fußabdruck!</StartHeader>
-    </ScreenContainer>
+    </ScreenContainerComponent>
   );
 };

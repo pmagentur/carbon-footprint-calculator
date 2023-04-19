@@ -1,41 +1,28 @@
 import * as React from 'react';
-import {ScreenContainer} from '../Components';
+import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
 import {TravelImage} from '../Assets/Images';
 import {
   Header,
-  ForwardNavigationButton,
-  NavigationButtonText,
+  HeaderContainer,
+  ImageContainer,
   SelectButton,
   SelectButtonText,
   SubHeaderText,
-  NavigationContainer,
-  ImageContainer,
-  HeaderContainer,
 } from '../Assets/Style';
 import {
   TravelEuropeIcon,
   TravelGermanyIcon,
   TravelTranscontinentalIcon,
 } from '../Assets/Icons';
-import {RootStackParamList} from '../Navigation';
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {SCREENS} from '../Constants';
 
 export const TravelScreen = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-
   return (
-    <ScreenContainer>
-      <NavigationContainer>
-        <ForwardNavigationButton>
-          <NavigationButtonText
-            onPress={() => navigation.navigate(SCREENS.FLIGHT_HOUR_SCREEN)}>
-            Überspringen
-          </NavigationButtonText>
-        </ForwardNavigationButton>
-      </NavigationContainer>
+    <ScreenContainerComponent>
+      <NavigationMenuComponent
+        BackwardScreen={SCREENS.MOBILITY_SCREEN}
+        ForwardScreen={SCREENS.FLIGHT_HOUR_SCREEN}
+      />
       <ImageContainer>
         <TravelImage />
       </ImageContainer>
@@ -55,6 +42,6 @@ export const TravelScreen = () => {
         <TravelTranscontinentalIcon />
         <SelectButtonText>Amerika, Australien, Asien, Afrika</SelectButtonText>
       </SelectButton>
-    </ScreenContainer>
+    </ScreenContainerComponent>
   );
 };

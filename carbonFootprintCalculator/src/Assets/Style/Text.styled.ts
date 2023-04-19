@@ -40,4 +40,5 @@ export const NavigationButtonText = styled(Text)`
   font-family: ${FONTS.REGULAR};
   color: ${COLORS.CFP_BLACK};
   font-size: ${FONT_SIZES.ML}px;
+  margin: auto 0 auto 0;
 `;

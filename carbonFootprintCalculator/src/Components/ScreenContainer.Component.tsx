@@ -4,7 +4,7 @@ import * as React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import DeviceInfo from 'react-native-device-info';
 import styled from 'styled-components';
-import { COLORS } from "../Constants/Colors.Constants";
+import {COLORS} from '../Constants/Colors.Constants';
 
 type ScreenContainerProps = {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ const isIphone12 =
   RN.Platform.OS === 'ios' &&
   DeviceInfo.getDeviceId().split(',')[0] === 'iPhone13';
 
-export const ScreenContainer = ({
+export const ScreenContainerComponent = ({
   children,
   backgroundColor = COLORS.WHITE,
 }: ScreenContainerProps) => {

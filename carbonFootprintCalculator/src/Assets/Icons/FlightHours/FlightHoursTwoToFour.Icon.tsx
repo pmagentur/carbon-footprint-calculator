@@ -12,7 +12,7 @@ export const FlightHoursTwoToFourIcon = ({width, height, color}: IconProps) => {
           <Rect
             width={width ?? 48}
             height={height ?? 48}
-            fill={color ?? COLORS.WHITE}
+            fill={COLORS.WHITE}
             data-name="Rectangle 7699"
             opacity="0.004"
             rx="24"

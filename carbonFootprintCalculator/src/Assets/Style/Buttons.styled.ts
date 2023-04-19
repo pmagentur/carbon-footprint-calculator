@@ -25,5 +25,13 @@ export const SelectButton = styled(TouchableOpacity)`
 `;
 
 export const ForwardNavigationButton = styled(TouchableOpacity)`
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+`;
+
+export const BackwardNavigationButton = styled(TouchableOpacity)`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 `;

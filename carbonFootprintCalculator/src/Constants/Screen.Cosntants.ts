@@ -1,4 +1,5 @@
 export enum SCREENS {
+  NONE = 'None',
   ELECTRICITY_SCREEN = 'ElectricityScreen',
   FLIGHT_HOUR_SCREEN = 'FlightHourScreen',
   FOOD_SCREEN = 'FoodScreen',

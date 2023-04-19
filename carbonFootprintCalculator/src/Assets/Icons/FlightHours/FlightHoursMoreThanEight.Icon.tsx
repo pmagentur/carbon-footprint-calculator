@@ -4,11 +4,7 @@ import Svg, {G, Path} from 'react-native-svg';
 import {COLORS} from '../../../Constants';
 import {IconProps} from '../IconProps';
 
-export const FlightHoursMoreThanEightIcon = ({
-  width,
-  height,
-  color,
-}: IconProps) => {
+export const FlightHoursMoreThanEightIcon = ({width, height, color}: IconProps) => {
   return (
     <View>
       <Svg width={width ?? 48} height={height ?? 48} viewBox="0 0 48 48">
