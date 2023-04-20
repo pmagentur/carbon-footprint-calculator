@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
+import {NavigationMenuComponent, ScreenContainerComponent, SelectButtonComponent} from '../Components';
 import {FlightHoursImage} from '../Assets/Images';
 import {
   Header,
@@ -21,8 +21,8 @@ export const FlightHourScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        BackwardScreen={SCREENS.TRAVEL_SCREEN}
-        ForwardScreen={SCREENS.FOOD_SCREEN}
+        backwardNavigation={SCREENS.TRAVEL_SCREEN}
+        forwardNavigation={SCREENS.FOOD_SCREEN}
       />
       <ImageContainer>
         <FlightHoursImage />
@@ -31,22 +31,26 @@ export const FlightHourScreen = () => {
         <Header>Flugstunden</Header>
         <SubHeaderText>Wie viele Stunden bist du im Flugzeug?</SubHeaderText>
       </HeaderContainer>
-      <SelectButton>
+      <SelectButtonComponent
+        text={'Weniger als 2 Stunden'}
+        navScreen={SCREENS.FOOD_SCREEN}>
         <FlightHoursLessThanTwoIcon />
-        <SelectButtonText>Weniger als 2 Stunden</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'2-4 Stunden'}
+        navScreen={SCREENS.FOOD_SCREEN}>
         <FlightHoursTwoToFourIcon />
-        <SelectButtonText>2-4 Stunden</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'4-8 Stunden'}
+        navScreen={SCREENS.FOOD_SCREEN}>
         <FlightHoursFourToEightIcon />
-        <SelectButtonText>4-8 Stunden</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Mehr als 8 Stunden'}
+        navScreen={SCREENS.FOOD_SCREEN}>
         <FlightHoursMoreThanEightIcon />
-        <SelectButtonText>Mehr als 8 Stunden</SelectButtonText>
-      </SelectButton>
+      </SelectButtonComponent>
     </ScreenContainerComponent>
   );
 };

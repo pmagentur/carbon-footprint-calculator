@@ -1,12 +1,14 @@
 import * as React from 'react';
-import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
+import {
+  NavigationMenuComponent,
+  ScreenContainerComponent,
+  SelectButtonComponent,
+} from '../Components';
 import {LivingImage} from '../Assets/Images';
 import {
   Header,
   HeaderContainer,
   ImageContainer,
-  SelectButton,
-  SelectButtonText,
   SubHeaderText,
 } from '../Assets/Style';
 import {SCREENS} from '../Constants';
@@ -20,8 +22,8 @@ export const LivingScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        BackwardScreen={SCREENS.FOOD_SCREEN}
-        ForwardScreen={SCREENS.ELECTRICITY_SCREEN}
+        backwardNavigation={SCREENS.FOOD_SCREEN}
+        forwardNavigation={SCREENS.ELECTRICITY_SCREEN}
       />
       <ImageContainer>
         <LivingImage />
@@ -32,18 +34,21 @@ export const LivingScreen = () => {
           Wie viele Personen leben in deinem Haushalt?
         </SubHeaderText>
       </HeaderContainer>
-      <SelectButton>
+      <SelectButtonComponent
+        text={'Nur ich'}
+        navScreen={SCREENS.ELECTRICITY_SCREEN}>
         <LivingOnlyMeIcon />
-        <SelectButtonText>Nur ich</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'2-4 Personen'}
+        navScreen={SCREENS.ELECTRICITY_SCREEN}>
         <LivingTwoToFourIcon />
-        <SelectButtonText>2-4 Personen</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Mehr als 4 Personen'}
+        navScreen={SCREENS.ELECTRICITY_SCREEN}>
         <LivingMoreThanFourIcon />
-        <SelectButtonText>Mehr als 4 Personen</SelectButtonText>
-      </SelectButton>
+      </SelectButtonComponent>
     </ScreenContainerComponent>
   );
 };

@@ -5,8 +5,6 @@ import {
   Header,
   HeaderContainer,
   ImageContainer,
-  SelectButton,
-  SelectButtonText,
   SubHeaderText,
 } from '../Assets/Style';
 import {
@@ -15,13 +13,14 @@ import {
   TravelTranscontinentalIcon,
 } from '../Assets/Icons';
 import {SCREENS} from '../Constants';
+import {SelectButtonComponent} from '../Components';
 
 export const TravelScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        BackwardScreen={SCREENS.MOBILITY_SCREEN}
-        ForwardScreen={SCREENS.FLIGHT_HOUR_SCREEN}
+        backwardNavigation={SCREENS.MOBILITY_SCREEN}
+        forwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
       />
       <ImageContainer>
         <TravelImage />
@@ -30,18 +29,19 @@ export const TravelScreen = () => {
         <Header>Reisen</Header>
         <SubHeaderText>Wo liegt dein nächstes Reiseziel?</SubHeaderText>
       </HeaderContainer>
-      <SelectButton>
+      <SelectButtonComponent
+        text={'Deutschland'}
+        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}>
         <TravelGermanyIcon />
-        <SelectButtonText>Deutschland</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent text={'Europa'} navScreen={SCREENS.FLIGHT_HOUR_SCREEN}>
         <TravelEuropeIcon />
-        <SelectButtonText>Europa</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Amerika, Australien, Asien, Afrika'}
+        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}>
         <TravelTranscontinentalIcon />
-        <SelectButtonText>Amerika, Australien, Asien, Afrika</SelectButtonText>
-      </SelectButton>
+      </SelectButtonComponent>
     </ScreenContainerComponent>
   );
 };

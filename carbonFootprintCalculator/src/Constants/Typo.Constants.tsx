@@ -5,10 +5,10 @@ export const FONTS = {
 };
 
 export const FONT_SIZES = {
-  XS: 12,
-  S: 14,
-  M: 15,
-  ML: 16,
+  XS: 15,
+  S: 16,
+  M: 20,
   L: 24,
   XL: 28,
+  XXL: 38,
 };

@@ -1,10 +1,12 @@
 import * as React from 'react';
-import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
+import {
+  NavigationMenuComponent,
+  ScreenContainerComponent,
+  SelectButtonComponent,
+} from '../Components';
 import {FoodImage} from '../Assets/Images';
 import {
   Header,
-  SelectButton,
-  SelectButtonText,
   SubHeaderText,
   ImageContainer,
   HeaderContainer,
@@ -21,8 +23,8 @@ export const FoodScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        BackwardScreen={SCREENS.FLIGHT_HOUR_SCREEN}
-        ForwardScreen={SCREENS.LIVING_SCREEN}
+        backwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
+        forwardNavigation={SCREENS.LIVING_SCREEN}
       />
       <ImageContainer>
         <FoodImage />
@@ -31,22 +33,24 @@ export const FoodScreen = () => {
         <Header>Ernährung</Header>
         <SubHeaderText>Wie ernährst du dich überwiegend?</SubHeaderText>
       </HeaderContainer>
-      <SelectButton>
+      <SelectButtonComponent text={'Vegan'} navScreen={SCREENS.LIVING_SCREEN}>
         <FoodVeganIcon />
-        <SelectButtonText>Vegan</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Vegetarisch'}
+        navScreen={SCREENS.LIVING_SCREEN}>
         <FoodVegetarianIcon />
-        <SelectButtonText>Vegetarisch</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Mischkost'}
+        navScreen={SCREENS.LIVING_SCREEN}>
         <FoodMixDietIcon />
-        <SelectButtonText>Mischkost</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Fleischlastig'}
+        navScreen={SCREENS.LIVING_SCREEN}>
         <FoodMeatCentricIcon />
-        <SelectButtonText>Fleischlastig</SelectButtonText>
-      </SelectButton>
+      </SelectButtonComponent>
     </ScreenContainerComponent>
   );
 };

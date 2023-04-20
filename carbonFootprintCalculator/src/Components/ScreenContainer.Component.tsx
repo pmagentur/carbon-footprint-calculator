@@ -32,6 +32,7 @@ export const ScreenContainerComponent = ({
 const Content = styled(RN.View)<{backgroundColor: string}>`
   background-color: ${(props: {backgroundColor: any}) => props.backgroundColor};
   flex: 1;
+  margin: 0 24px 0 24px;
 `;
 
 // background color is status bar color too //

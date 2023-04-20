@@ -3,11 +3,9 @@ import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
 import {MobilityImage} from '../Assets/Images';
 import {
   Header,
-  SelectButton,
-  SelectButtonText,
-  SubHeaderText,
-  ImageContainer,
   HeaderContainer,
+  ImageContainer,
+  SubHeaderText,
 } from '../Assets/Style';
 import {
   MobilityBikeIcon,
@@ -16,11 +14,12 @@ import {
   MobilityPublicTransportIcon,
 } from '../Assets/Icons';
 import {SCREENS} from '../Constants';
+import {SelectButtonComponent} from '../Components';
 
 export const MobilityScreen = () => {
   return (
     <ScreenContainerComponent>
-      <NavigationMenuComponent ForwardScreen={SCREENS.TRAVEL_SCREEN} />
+      <NavigationMenuComponent forwardNavigation={SCREENS.TRAVEL_SCREEN} />
       <ImageContainer>
         <MobilityImage />
       </ImageContainer>
@@ -28,22 +27,20 @@ export const MobilityScreen = () => {
         <Header>Mobilität</Header>
         <SubHeaderText>Wie bewegst du dich im Alltag fort?</SubHeaderText>
       </HeaderContainer>
-      <SelectButton>
+      <SelectButtonComponent text={'Auto'} navScreen={SCREENS.TRAVEL_SCREEN}>
         <MobilityCarIcon />
-        <SelectButtonText>Auto</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Öffentliche Verkehrsmittel'}
+        navScreen={SCREENS.TRAVEL_SCREEN}>
         <MobilityPublicTransportIcon />
-        <SelectButtonText>Öffentliche Verkehrsmittel</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent text={'Fahrrad'} navScreen={SCREENS.TRAVEL_SCREEN}>
         <MobilityBikeIcon />
-        <SelectButtonText>Fahrrad</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent text={'Zu Fuß'} navScreen={SCREENS.TRAVEL_SCREEN}>
         <MobilityOnFootIcon />
-        <SelectButtonText>Zu Fuß</SelectButtonText>
-      </SelectButton>
+      </SelectButtonComponent>
     </ScreenContainerComponent>
   );
 };

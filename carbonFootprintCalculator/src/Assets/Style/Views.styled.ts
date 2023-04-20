@@ -13,18 +13,26 @@ export const ImageContainer = styled(View)`
   margin-bottom: 24px;
 `;
 
+export const ResultImageContainer = styled(View)`
+  height: 240.575px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 24px;
+`;
+
+export const ResultBackgroundImageContainer = styled(View)`
+  position: absolute;
+`;
+
 export const NavigationContainer = styled(View)<{hasBackwardButton: boolean}>`
   display: flex;
   flex-direction: row;
   justify-content: ${props =>
     props.hasBackwardButton ? 'space-between' : 'flex-end'};
-  margin-right: 24px;
-  margin-left: 24px;
 `;
 
 export const HeaderContainer = styled(View)`
-  margin-right: 24px;
-  margin-left: 24px;
   margin-bottom: 40px;
 `;
 
@@ -39,4 +47,19 @@ export const BackwardArrowIconContainer = styled(View)`
   margin-bottom: auto;
   margin-right: 8px;
   transform: rotateY(180deg);
+`;
+
+export const BarChartContainer = styled(View)`
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+`;
+
+export const BarChartTextContainer = styled(View)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2px;
 `;

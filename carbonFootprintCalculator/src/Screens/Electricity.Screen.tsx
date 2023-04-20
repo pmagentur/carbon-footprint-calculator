@@ -1,27 +1,25 @@
 import * as React from 'react';
-import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
+import {
+  NavigationMenuComponent,
+  ScreenContainerComponent,
+  SelectButtonComponent,
+} from '../Components';
 import {ElectricityImage} from '../Assets/Images';
 import {
   Header,
   HeaderContainer,
   ImageContainer,
-  SelectButton,
-  SelectButtonText,
   SubHeaderText,
 } from '../Assets/Style';
 import {SCREENS} from '../Constants';
-import {
-  ElectricityGreenIcon,
-  ElectricityMixIcon,
-  LivingMoreThanFourIcon,
-} from '../Assets/Icons';
+import {ElectricityGreenIcon, ElectricityMixIcon} from '../Assets/Icons';
 
 export const ElectricityScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        BackwardScreen={SCREENS.LIVING_SCREEN}
-        ForwardScreen={SCREENS.RESULT_SCREEN}
+        backwardNavigation={SCREENS.LIVING_SCREEN}
+        forwardNavigation={SCREENS.RESULT_SCREEN}
       />
       <ImageContainer>
         <ElectricityImage />
@@ -30,14 +28,16 @@ export const ElectricityScreen = () => {
         <Header>Elektrizität</Header>
         <SubHeaderText>Welche Art von Strom verwendest du?</SubHeaderText>
       </HeaderContainer>
-      <SelectButton>
+      <SelectButtonComponent
+        text={'Strommix'}
+        navScreen={SCREENS.RESULT_SCREEN}>
         <ElectricityMixIcon />
-        <SelectButtonText>Strommix</SelectButtonText>
-      </SelectButton>
-      <SelectButton>
+      </SelectButtonComponent>
+      <SelectButtonComponent
+        text={'Ökostrom'}
+        navScreen={SCREENS.RESULT_SCREEN}>
         <ElectricityGreenIcon />
-        <SelectButtonText>Ökostrom</SelectButtonText>
-      </SelectButton>
+      </SelectButtonComponent>
     </ScreenContainerComponent>
   );
 };

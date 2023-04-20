@@ -14,33 +14,37 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export type NavigationMenuProps = {
-  BackwardScreen: SCREENS;
-  ForwardScreen: SCREENS;
+  backwardNavigation?: SCREENS;
+  forwardNavigation?: SCREENS;
+  backwardText?: string;
+  forwardText?: string;
 };
 export const NavigationMenuComponent = ({
-  BackwardScreen = SCREENS.NONE,
-  ForwardScreen,
+  backwardNavigation = SCREENS.NONE,
+  forwardNavigation = SCREENS.START_SCREEN,
+  backwardText = 'Zurück',
+  forwardText = 'Überspringen',
 }: NavigationMenuProps) => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const hasBackwardButton = BackwardScreen !== SCREENS.NONE;
+  const hasBackwardButton = backwardNavigation !== SCREENS.NONE;
 
   return (
     <NavigationContainer hasBackwardButton={hasBackwardButton}>
       {hasBackwardButton && (
         <BackwardNavigationButton
           onPress={() =>
-            navigation.navigate(BackwardScreen ?? SCREENS.START_SCREEN)
+            navigation.navigate(backwardNavigation ?? SCREENS.START_SCREEN)
           }>
           <BackwardArrowIconContainer>
             <ArrowIcon />
           </BackwardArrowIconContainer>
-          <NavigationButtonText>Zurück</NavigationButtonText>
+          <NavigationButtonText>{backwardText}</NavigationButtonText>
         </BackwardNavigationButton>
       )}
       <ForwardNavigationButton
-        onPress={() => navigation.navigate(ForwardScreen)}>
-        <NavigationButtonText>Überspringen</NavigationButtonText>
+        onPress={() => navigation.navigate(forwardNavigation)}>
+        <NavigationButtonText>{forwardText}</NavigationButtonText>
         <ForwardArrowIconContainer>
           <ArrowIcon />
         </ForwardArrowIconContainer>
