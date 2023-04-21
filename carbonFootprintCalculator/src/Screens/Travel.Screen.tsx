@@ -18,16 +18,18 @@ import {
 } from '../Assets/Icons';
 import {SCREENS} from '../Constants';
 import {STORAGE_VALUES_TRAVEL} from '../Storage/StorageValues.Enum';
-import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
+import {RemoveItemFromStorage, STORAGE_KEYS, StoreData} from '../Storage';
 
 export const TravelScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
         backwardNavigation={SCREENS.TRAVEL_SCREEN}
-        backwardHandler={() => RemoveItem(STORAGE_KEYS.MOBILITY)}
+        backwardHandler={async () =>
+          RemoveItemFromStorage(STORAGE_KEYS.MOBILITY)
+        }
         forwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
-        forwardHandler={() =>
+        forwardHandler={async () =>
           StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.NONE)
         }
       />

@@ -26,7 +26,7 @@ export const MobilityScreen = () => {
     <ScreenContainerComponent>
       <NavigationMenuComponent
         forwardNavigation={SCREENS.TRAVEL_SCREEN}
-        forwardHandler={() =>
+        forwardHandler={async () =>
           StoreData(STORAGE_KEYS.MOBILITY, STORAGE_VALUES_MOBILITY.NONE)
         }
       />

@@ -50,8 +50,8 @@ export const BackwardArrowIconContainer = styled(View)`
 `;
 
 export const BarChartContainer = styled(View)`
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin-top: 16px;
   margin-bottom: 16px;
 `;

@@ -18,7 +18,7 @@ import {
 } from '../Assets/Icons';
 import {SCREENS} from '../Constants';
 import {FlightHoursLessThanTwoIcon} from '../Assets/Icons/FlightHours/FlightHoursLessThanTwo.Icon';
-import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
+import {RemoveItemFromStorage, STORAGE_KEYS, StoreData} from '../Storage';
 import {STORAGE_VALUES_FLIGHT_HOURS} from '../Storage/StorageValues.Enum';
 
 export const FlightHourScreen = () => {
@@ -26,9 +26,9 @@ export const FlightHourScreen = () => {
     <ScreenContainerComponent>
       <NavigationMenuComponent
         backwardNavigation={SCREENS.TRAVEL_SCREEN}
-        backwardHandler={() => RemoveItem(STORAGE_KEYS.TRAVEL)}
+        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.TRAVEL)}
         forwardNavigation={SCREENS.FOOD_SCREEN}
-        forwardHandler={() =>
+        forwardHandler={async () =>
           StoreData(STORAGE_KEYS.FLIGHT_HOURS, STORAGE_VALUES_FLIGHT_HOURS.NONE)
         }
       />

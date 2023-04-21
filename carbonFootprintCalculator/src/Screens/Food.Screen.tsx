@@ -19,16 +19,16 @@ import {
 } from '../Assets/Icons';
 import {SCREENS} from '../Constants';
 import {STORAGE_VALUES_FOOD} from '../Storage/StorageValues.Enum';
-import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
+import {RemoveItemFromStorage, STORAGE_KEYS, StoreData} from '../Storage';
 
 export const FoodScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
         backwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
-        backwardHandler={() => RemoveItem(STORAGE_KEYS.FLIGHT_HOURS)}
+        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.FLIGHT_HOURS)}
         forwardNavigation={SCREENS.LIVING_SCREEN}
-        forwardHandler={() =>
+        forwardHandler={async () =>
           StoreData(STORAGE_KEYS.FOOD, STORAGE_VALUES_FOOD.NONE)
         }
       />

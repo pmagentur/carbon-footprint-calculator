@@ -14,16 +14,16 @@ import {
 import {SCREENS} from '../Constants';
 import {ElectricityGreenIcon, ElectricityMixIcon} from '../Assets/Icons';
 import {STORAGE_VALUES_ELECTRICITY} from '../Storage/StorageValues.Enum';
-import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
+import {RemoveItemFromStorage, STORAGE_KEYS, StoreData} from '../Storage';
 
 export const ElectricityScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
         backwardNavigation={SCREENS.LIVING_SCREEN}
-        backwardHandler={() => RemoveItem(STORAGE_KEYS.LIVING)}
+        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.LIVING)}
         forwardNavigation={SCREENS.RESULT_SCREEN}
-        forwardHandler={() =>
+        forwardHandler={async () =>
           StoreData(STORAGE_KEYS.ELECTRICITY, STORAGE_VALUES_ELECTRICITY.NONE)
         }
       />

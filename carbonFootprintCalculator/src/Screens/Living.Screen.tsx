@@ -18,16 +18,16 @@ import {
   LivingTwoToFourIcon,
 } from '../Assets/Icons';
 import {STORAGE_VALUES_LIVING} from '../Storage/StorageValues.Enum';
-import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
+import {RemoveItemFromStorage, STORAGE_KEYS, StoreData} from '../Storage';
 
 export const LivingScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
         backwardNavigation={SCREENS.FOOD_SCREEN}
-        backwardHandler={() => RemoveItem(STORAGE_KEYS.FOOD)}
+        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.FOOD)}
         forwardNavigation={SCREENS.ELECTRICITY_SCREEN}
-        forwardHandler={() =>
+        forwardHandler={async () =>
           StoreData(STORAGE_KEYS.LIVING, STORAGE_VALUES_LIVING.NONE)
         }
       />
