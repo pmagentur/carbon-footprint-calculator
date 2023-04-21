@@ -1,8 +1,5 @@
 import * as React from 'react';
-import {
-  BarChartComponent,
-  ScreenContainerComponent
-} from "../Components";
+import {BarChartComponent, ScreenContainerComponent} from '../Components';
 import {ResultBackgroundImage} from '../Assets/Images';
 import {
   ResultImageContainer,
@@ -13,15 +10,13 @@ import {
   RestartButtonText,
   ResultHeader,
   ResultSubHeaderText,
-  BarChartHeader
-} from "../Assets/Style";
+  BarChartHeader,
+} from '../Assets/Style';
 import {RootStackParamList} from '../Navigation';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useNavigation} from '@react-navigation/native';
-import {
-  COLORS,
-  SCREENS
-} from "../Constants";
+import {COLORS, SCREENS} from '../Constants';
+import {ClearStorage} from '../Storage';
 
 export const ResultScreen = () => {
   const navigation =
@@ -55,7 +50,10 @@ export const ResultScreen = () => {
         description={'Weltweiter Durchschnitt'}
         value={'4,5 Tonnen'}
       />
-      <RestartButton onPress={() => navigation.navigate(SCREENS.START_SCREEN)}>
+      <RestartButton
+        onPress={() =>
+          ClearStorage().then(() => navigation.navigate(SCREENS.START_SCREEN))
+        }>
         <RestartButtonText>Nochmals berechnen</RestartButtonText>
       </RestartButton>
     </ScreenContainerComponent>

@@ -1,5 +1,9 @@
 import * as React from 'react';
-import {NavigationMenuComponent, ScreenContainerComponent} from '../Components';
+import {
+  NavigationMenuComponent,
+  ScreenContainerComponent,
+  SelectButtonComponent,
+} from '../Components';
 import {TravelImage} from '../Assets/Images';
 import {
   Header,
@@ -13,14 +17,19 @@ import {
   TravelTranscontinentalIcon,
 } from '../Assets/Icons';
 import {SCREENS} from '../Constants';
-import {SelectButtonComponent} from '../Components';
+import {STORAGE_VALUES_TRAVEL} from '../Storage/StorageValues.Enum';
+import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
 
 export const TravelScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        backwardNavigation={SCREENS.MOBILITY_SCREEN}
+        backwardNavigation={SCREENS.TRAVEL_SCREEN}
+        backwardHandler={() => RemoveItem(STORAGE_KEYS.MOBILITY)}
         forwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
+        forwardHandler={() =>
+          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.NONE)
+        }
       />
       <ImageContainer>
         <TravelImage />
@@ -31,15 +40,26 @@ export const TravelScreen = () => {
       </HeaderContainer>
       <SelectButtonComponent
         text={'Deutschland'}
-        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}>
+        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}
+        onClick={() =>
+          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.GERMANY)
+        }>
         <TravelGermanyIcon />
       </SelectButtonComponent>
-      <SelectButtonComponent text={'Europa'} navScreen={SCREENS.FLIGHT_HOUR_SCREEN}>
+      <SelectButtonComponent
+        text={'Europa'}
+        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}
+        onClick={() =>
+          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.EUROPE)
+        }>
         <TravelEuropeIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
         text={'Amerika, Australien, Asien, Afrika'}
-        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}>
+        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}
+        onClick={() =>
+          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.TRANSCONTINENTAL)
+        }>
         <TravelTranscontinentalIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>

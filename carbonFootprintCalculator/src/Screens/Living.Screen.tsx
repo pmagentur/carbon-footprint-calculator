@@ -17,13 +17,19 @@ import {
   LivingOnlyMeIcon,
   LivingTwoToFourIcon,
 } from '../Assets/Icons';
+import {STORAGE_VALUES_LIVING} from '../Storage/StorageValues.Enum';
+import {RemoveItem, STORAGE_KEYS, StoreData} from '../Storage';
 
 export const LivingScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
         backwardNavigation={SCREENS.FOOD_SCREEN}
+        backwardHandler={() => RemoveItem(STORAGE_KEYS.FOOD)}
         forwardNavigation={SCREENS.ELECTRICITY_SCREEN}
+        forwardHandler={() =>
+          StoreData(STORAGE_KEYS.LIVING, STORAGE_VALUES_LIVING.NONE)
+        }
       />
       <ImageContainer>
         <LivingImage />
@@ -36,17 +42,26 @@ export const LivingScreen = () => {
       </HeaderContainer>
       <SelectButtonComponent
         text={'Nur ich'}
-        navScreen={SCREENS.ELECTRICITY_SCREEN}>
+        navScreen={SCREENS.ELECTRICITY_SCREEN}
+        onClick={() =>
+          StoreData(STORAGE_KEYS.LIVING, STORAGE_VALUES_LIVING.ONLY_ME)
+        }>
         <LivingOnlyMeIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
         text={'2-4 Personen'}
-        navScreen={SCREENS.ELECTRICITY_SCREEN}>
+        navScreen={SCREENS.ELECTRICITY_SCREEN}
+        onClick={() =>
+          StoreData(STORAGE_KEYS.LIVING, STORAGE_VALUES_LIVING.TWO_TO_FOUR)
+        }>
         <LivingTwoToFourIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
         text={'Mehr als 4 Personen'}
-        navScreen={SCREENS.ELECTRICITY_SCREEN}>
+        navScreen={SCREENS.ELECTRICITY_SCREEN}
+        onClick={() =>
+          StoreData(STORAGE_KEYS.LIVING, STORAGE_VALUES_LIVING.MORE_THAN_FOUR)
+        }>
         <LivingMoreThanFourIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>

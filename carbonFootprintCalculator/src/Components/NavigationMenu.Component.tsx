@@ -16,12 +16,16 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 export type NavigationMenuProps = {
   backwardNavigation?: SCREENS;
   forwardNavigation?: SCREENS;
+  backwardHandler?: () => void;
+  forwardHandler?: () => void;
   backwardText?: string;
   forwardText?: string;
 };
 export const NavigationMenuComponent = ({
   backwardNavigation = SCREENS.NONE,
   forwardNavigation = SCREENS.START_SCREEN,
+  backwardHandler = () => {},
+  forwardHandler = () => {},
   backwardText = 'Zurück',
   forwardText = 'Überspringen',
 }: NavigationMenuProps) => {
@@ -33,9 +37,10 @@ export const NavigationMenuComponent = ({
     <NavigationContainer hasBackwardButton={hasBackwardButton}>
       {hasBackwardButton && (
         <BackwardNavigationButton
-          onPress={() =>
-            navigation.navigate(backwardNavigation ?? SCREENS.START_SCREEN)
-          }>
+          onPress={() => {
+            backwardHandler();
+            navigation.navigate(backwardNavigation ?? SCREENS.START_SCREEN);
+          }}>
           <BackwardArrowIconContainer>
             <ArrowIcon />
           </BackwardArrowIconContainer>
@@ -43,7 +48,10 @@ export const NavigationMenuComponent = ({
         </BackwardNavigationButton>
       )}
       <ForwardNavigationButton
-        onPress={() => navigation.navigate(forwardNavigation)}>
+        onPress={() => {
+          forwardHandler();
+          navigation.navigate(forwardNavigation);
+        }}>
         <NavigationButtonText>{forwardText}</NavigationButtonText>
         <ForwardArrowIconContainer>
           <ArrowIcon />
