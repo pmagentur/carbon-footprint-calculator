@@ -1,16 +1,35 @@
 import styled from 'styled-components';
 import {View} from 'react-native';
 
+export const ImageContainer = styled(View)`
+`;
+
+export const HeaderContainer = styled(View)`
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const StartButtonContainer = styled(View)`
   margin-top: 241px;
   margin-bottom: 32px;
   display: flex;
   align-items: center;
-`;
-
-export const ImageContainer = styled(View)`
-  margin-top: 24px;
-  margin-bottom: 24px;
 `;
 
 export const ResultImageContainer = styled(View)`
@@ -30,10 +49,6 @@ export const NavigationContainer = styled(View)<{hasBackwardButton: boolean}>`
   flex-direction: row;
   justify-content: ${props =>
     props.hasBackwardButton ? 'space-between' : 'flex-end'};
-`;
-
-export const HeaderContainer = styled(View)`
-  margin-bottom: 40px;
 `;
 
 export const ForwardArrowIconContainer = styled(View)`
