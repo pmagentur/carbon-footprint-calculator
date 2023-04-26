@@ -12,7 +12,7 @@ export const StoreData = async (
     })
     .catch(error => {
       console.error(
-        'Failed to save the data to the storage (' + key + '|' + value + ')',
+        'Failed to save data in storage (' + key + '|' + value + ')',
         error,
       );
     });
@@ -55,9 +55,6 @@ export const RetrieveAllC02Data = async (): Promise<StorageKeyResult> => {
   const mappedData = MapStoreDataToKey(result);
   console.log('mappedData', mappedData);
   return mappedData;
-  // } catch (error) {
-  //   console.error('Error retrieving all data', error);
-  // }
 };
 
 const MapStoreDataToKey = (

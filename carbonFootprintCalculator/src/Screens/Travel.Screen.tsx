@@ -24,7 +24,7 @@ export const TravelScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        backwardNavigation={SCREENS.TRAVEL_SCREEN}
+        backwardNavigation={SCREENS.MOBILITY_SCREEN}
         backwardHandler={async () =>
           RemoveItemFromStorage(STORAGE_KEYS.MOBILITY)
         }
