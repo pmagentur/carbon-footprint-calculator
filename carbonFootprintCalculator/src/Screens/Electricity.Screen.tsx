@@ -20,12 +20,6 @@ export const ElectricityScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        backwardNavigation={SCREENS.LIVING_SCREEN}
-        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.LIVING)}
-        forwardNavigation={SCREENS.RESULT_SCREEN}
-        forwardHandler={async () =>
-          StoreData(STORAGE_KEYS.ELECTRICITY, STORAGE_VALUES_ELECTRICITY.NONE)
-        }
       />
       <ImageContainer>
         <ElectricityImage />
@@ -35,19 +29,11 @@ export const ElectricityScreen = () => {
         <SubHeaderText>Welche Art von Strom verwendest du?</SubHeaderText>
       </HeaderContainer>
       <SelectButtonComponent
-        text={'Strommix'}
-        navScreen={SCREENS.RESULT_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.ELECTRICITY, STORAGE_VALUES_ELECTRICITY.MIX)
-        }>
+        text={'Strommix'}>
         <ElectricityMixIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Ökostrom'}
-        navScreen={SCREENS.RESULT_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.ELECTRICITY, STORAGE_VALUES_ELECTRICITY.GREEN)
-        }>
+        text={'Ökostrom'}>
         <ElectricityGreenIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>

@@ -25,12 +25,6 @@ export const FoodScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        backwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
-        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.FLIGHT_HOURS)}
-        forwardNavigation={SCREENS.LIVING_SCREEN}
-        forwardHandler={async () =>
-          StoreData(STORAGE_KEYS.FOOD, STORAGE_VALUES_FOOD.NONE)
-        }
       />
       <ImageContainer>
         <FoodImage />
@@ -40,33 +34,19 @@ export const FoodScreen = () => {
         <SubHeaderText>Wie ernährst du dich überwiegend?</SubHeaderText>
       </HeaderContainer>
       <SelectButtonComponent
-        text={'Vegan'}
-        navScreen={SCREENS.LIVING_SCREEN}
-        onClick={() => StoreData(STORAGE_KEYS.FOOD, STORAGE_VALUES_FOOD.VEGAN)}>
+        text={'Vegan'}>
         <FoodVeganIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Vegetarisch'}
-        navScreen={SCREENS.LIVING_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.FOOD, STORAGE_VALUES_FOOD.VEGETARIAN)
-        }>
+        text={'Vegetarisch'}>
         <FoodVegetarianIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Mischkost'}
-        navScreen={SCREENS.LIVING_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.FOOD, STORAGE_VALUES_FOOD.MIX_DIET)
-        }>
+        text={'Mischkost'}>
         <FoodMixDietIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Fleischlastig'}
-        navScreen={SCREENS.LIVING_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.FOOD, STORAGE_VALUES_FOOD.MEAT_CENTRIC)
-        }>
+        text={'Fleischlastig'}>
         <FoodMeatCentricIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>

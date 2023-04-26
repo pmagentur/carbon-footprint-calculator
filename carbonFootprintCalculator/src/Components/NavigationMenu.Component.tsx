@@ -23,7 +23,7 @@ export type NavigationMenuProps = {
 };
 export const NavigationMenuComponent = ({
   backwardNavigation = SCREENS.NONE,
-  forwardNavigation = SCREENS.START_SCREEN,
+  forwardNavigation = SCREENS.NONE,
   backwardHandler = async () => {},
   forwardHandler = async () => {},
   backwardText = 'Zurück',

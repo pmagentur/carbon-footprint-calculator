@@ -25,10 +25,6 @@ export const MobilityScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        forwardNavigation={SCREENS.TRAVEL_SCREEN}
-        forwardHandler={async () =>
-          StoreData(STORAGE_KEYS.MOBILITY, STORAGE_VALUES_MOBILITY.NONE)
-        }
       />
       <ImageContainer>
         <MobilityImage />
@@ -38,38 +34,19 @@ export const MobilityScreen = () => {
         <SubHeaderText>Wie bewegst du dich im Alltag fort?</SubHeaderText>
       </HeaderContainer>
       <SelectButtonComponent
-        text={'Auto'}
-        navScreen={SCREENS.TRAVEL_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.MOBILITY, STORAGE_VALUES_MOBILITY.CAR)
-        }>
+        text={'Auto'}>
         <MobilityCarIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Öffentliche Verkehrsmittel'}
-        navScreen={SCREENS.TRAVEL_SCREEN}
-        onClick={() =>
-          StoreData(
-            STORAGE_KEYS.MOBILITY,
-            STORAGE_VALUES_MOBILITY.PUBLIC_TRANSPORT,
-          )
-        }>
+        text={'Öffentliche Verkehrsmittel'}>
         <MobilityPublicTransportIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Fahrrad'}
-        navScreen={SCREENS.TRAVEL_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.MOBILITY, STORAGE_VALUES_MOBILITY.BIKE)
-        }>
+        text={'Fahrrad'}>
         <MobilityBikeIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Zu Fuß'}
-        navScreen={SCREENS.TRAVEL_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.MOBILITY, STORAGE_VALUES_MOBILITY.FOOT)
-        }>
+        text={'Zu Fuß'}>
         <MobilityOnFootIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>

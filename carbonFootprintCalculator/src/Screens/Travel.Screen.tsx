@@ -24,14 +24,6 @@ export const TravelScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        backwardNavigation={SCREENS.MOBILITY_SCREEN}
-        backwardHandler={async () =>
-          RemoveItemFromStorage(STORAGE_KEYS.MOBILITY)
-        }
-        forwardNavigation={SCREENS.FLIGHT_HOUR_SCREEN}
-        forwardHandler={async () =>
-          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.NONE)
-        }
       />
       <ImageContainer>
         <TravelImage />
@@ -41,27 +33,15 @@ export const TravelScreen = () => {
         <SubHeaderText>Wo liegt dein nächstes Reiseziel?</SubHeaderText>
       </HeaderContainer>
       <SelectButtonComponent
-        text={'Deutschland'}
-        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.GERMANY)
-        }>
+        text={'Deutschland'}>
         <TravelGermanyIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Europa'}
-        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.EUROPE)
-        }>
+        text={'Europa'}>
         <TravelEuropeIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Amerika, Australien, Asien, Afrika'}
-        navScreen={SCREENS.FLIGHT_HOUR_SCREEN}
-        onClick={() =>
-          StoreData(STORAGE_KEYS.TRAVEL, STORAGE_VALUES_TRAVEL.TRANSCONTINENTAL)
-        }>
+        text={'Amerika, Australien, Asien, Afrika'}>
         <TravelTranscontinentalIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>

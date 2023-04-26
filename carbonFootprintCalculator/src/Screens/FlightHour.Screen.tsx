@@ -25,12 +25,6 @@ export const FlightHourScreen = () => {
   return (
     <ScreenContainerComponent>
       <NavigationMenuComponent
-        backwardNavigation={SCREENS.TRAVEL_SCREEN}
-        backwardHandler={async () => RemoveItemFromStorage(STORAGE_KEYS.TRAVEL)}
-        forwardNavigation={SCREENS.FOOD_SCREEN}
-        forwardHandler={async () =>
-          StoreData(STORAGE_KEYS.FLIGHT_HOURS, STORAGE_VALUES_FLIGHT_HOURS.NONE)
-        }
       />
       <ImageContainer>
         <FlightHoursImage />
@@ -40,47 +34,19 @@ export const FlightHourScreen = () => {
         <SubHeaderText>Wie viele Stunden bist du im Flugzeug?</SubHeaderText>
       </HeaderContainer>
       <SelectButtonComponent
-        text={'Weniger als 2 Stunden'}
-        navScreen={SCREENS.FOOD_SCREEN}
-        onClick={() =>
-          StoreData(
-            STORAGE_KEYS.FLIGHT_HOURS,
-            STORAGE_VALUES_FLIGHT_HOURS.LESS_THAN_TWO,
-          )
-        }>
+        text={'Weniger als 2 Stunden'}>
         <FlightHoursLessThanTwoIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'2-4 Stunden'}
-        navScreen={SCREENS.FOOD_SCREEN}
-        onClick={() =>
-          StoreData(
-            STORAGE_KEYS.FLIGHT_HOURS,
-            STORAGE_VALUES_FLIGHT_HOURS.TWO_TO_FOUR,
-          )
-        }>
+        text={'2-4 Stunden'}>
         <FlightHoursTwoToFourIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'4-8 Stunden'}
-        navScreen={SCREENS.FOOD_SCREEN}
-        onClick={() =>
-          StoreData(
-            STORAGE_KEYS.FLIGHT_HOURS,
-            STORAGE_VALUES_FLIGHT_HOURS.FOUR_TO_EIGHT,
-          )
-        }>
+        text={'4-8 Stunden'}>
         <FlightHoursFourToEightIcon />
       </SelectButtonComponent>
       <SelectButtonComponent
-        text={'Mehr als 8 Stunden'}
-        navScreen={SCREENS.FOOD_SCREEN}
-        onClick={() =>
-          StoreData(
-            STORAGE_KEYS.FLIGHT_HOURS,
-            STORAGE_VALUES_FLIGHT_HOURS.MORE_THAN_EIGHT,
-          )
-        }>
+        text={'Mehr als 8 Stunden'}>
         <FlightHoursMoreThanEightIcon />
       </SelectButtonComponent>
     </ScreenContainerComponent>
