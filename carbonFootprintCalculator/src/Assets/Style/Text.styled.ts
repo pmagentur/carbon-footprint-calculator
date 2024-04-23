@@ -16,9 +16,7 @@ export const StartHeader = styled(Text)`
 `;
 
 export const Header = styled(Text)`
-  font-family: ${FONTS.BOLD};
-  color: ${COLORS.CFP_BLACK};
-  font-size: ${FONT_SIZES.XL}px;
+  font-family: 'Poppins-Regular';
 `;
 
 export const ResultHeader = styled(Text)`
@@ -28,9 +26,7 @@ export const ResultHeader = styled(Text)`
 `;
 
 export const SubHeaderText = styled(Text)`
-  font-family: ${FONTS.REGULAR};
-  color: ${COLORS.CFP_TEXT};
-  font-size: ${FONT_SIZES.XS}px;
+  font-family: 'Poppins-Regular';
 `;
 
 export const ResultSubHeaderText = styled(Text)`
@@ -60,10 +56,6 @@ export const NavigationButtonText = styled(Text)`
 `;
 
 export const RestartButtonText = styled(Text)`
-  font-family: ${FONTS.REGULAR};
-  color: ${COLORS.CFP_BLACK};
-  font-size: ${FONT_SIZES.S}px;
-  margin: auto;
 `;
 
 export const BarChartText = styled(Text)`

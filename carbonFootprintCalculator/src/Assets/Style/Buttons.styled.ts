@@ -16,12 +16,6 @@ export const SelectButton = styled(TouchableOpacity)`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border-radius: ${BUTTON_BORDER_RADIUS.Button}px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${COLORS.CFP_GREEN3};
-  margin-bottom: 16px;
-  padding: 4px 0 4px 8px;
 `;
 
 export const ForwardNavigationButton = styled(TouchableOpacity)`
@@ -37,10 +31,5 @@ export const BackwardNavigationButton = styled(TouchableOpacity)`
 `;
 
 export const RestartButton = styled(TouchableOpacity)`
-  border-radius: ${BUTTON_BORDER_RADIUS.Button}px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${COLORS.CFP_GREEN3};
-  height: 56px;
-  margin-top: 100px;
+    
 `;
